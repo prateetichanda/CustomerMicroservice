@@ -1,0 +1,12 @@
+memory: 1GB
+instances: 1
+applications:
+- name: customer-microservice
+  path: D:/spring/CustomerMicroservice/target/CustomerMicroservice-0.0.1-SNAPSHOT.jar
+  routes:
+    - route: customer-microservice.cfapps.io
+  services:
+  - mydb2
+  
+  env:
+    CUSTOMER_URL: http://customer-microservice.cfapps.io/customer
